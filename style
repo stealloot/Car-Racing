@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    animation: shakebody linear 6s infinite;
+}
+.sky{
+    height: 100vh;
+    width: 100%;
+    background-image: url(image/background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.trees{
+    height: 100vh;
+    width: 100%;
+    background-image: url(image/trees.png);
+    background-size: cover; 
+    position: absolute;
+    top: -144px; 
+}
+.track{
+    height: 60vh;
+    width: 800vw;
+    background-image: url(image/track.png);
+    background-repeat: repeat-x; 
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 13s infinite;
+
+}
+
+.car{
+    height: 100px;
+    width: 380px;
+    background-image: url(image/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 150px;
+    bottom:30vh;
+    animation: shake linear .3s infinite;
+
+}
+
+
+.wheel1 img{
+    width: 77px;
+    position: relative;
+    top:42px;
+    left:42px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+
+.wheel2 img{
+    width: 77px;
+    position: relative;
+    top: -39px;
+    left: 235px;
+    animation: wheelRotation linear .16s infinite;
+
+}
+
+@keyframes wheelRotation
+{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMove
+{
+    100%{
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes shake
+{
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+@keyframes shakebody
+{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
+
+@media (max-width: 600px){
+    .car{
+    height: 70px;
+    width: 300px;
+    left: 100px;
+}
+  .wheel1 img{
+    width: 60px;
+    position: relative;
+    top:35px;
+    left:35px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+
+.wheel2 img{
+    width: 60px;
+    position: relative;
+    top: -30px;
+    left: 183px;
+    animation: wheelRotation linear .16s infinite;
+}
+  
+}
